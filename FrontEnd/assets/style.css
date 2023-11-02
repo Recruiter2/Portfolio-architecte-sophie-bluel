@@ -189,9 +189,13 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+footer {
+  background: white;
+}
 footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
+  display: flex;
+  justify-content: flex-end;
+  background: white;
+  padding: 2rem;
 }
 
