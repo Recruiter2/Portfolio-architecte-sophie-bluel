@@ -64,36 +64,3 @@ for(let i = 0; i < uniqueCategories.size; i++){
 }
 
 let copyArray = visits.slice(0)
-// const boutonFiltrer = document.getElementById("1");
-// boutonFiltrer.addEventListener("click", function () {
-//     const visitsFiltrees = copyArray.filter(function (visit) {
-//         return visit.category.id != 1;
-//     });
-//     document.querySelector(".gallery").innerHTML = "";
-//     genererVisits(visitsFiltrees);
-//     console.log(visitsFiltrees);
-// });
-//
-// const boutonFiltrer0 = document.getElementById("2");
-// boutonFiltrer0.addEventListener("click", function () {
-//     const visitsFiltrees = copyArray.filter(function (visit) {
-//         return visit.category.id !== 2;
-//     });
-//     document.querySelector(".gallery").innerHTML = "";
-//     genererVisits(visitsFiltrees);
-//     console.log(visitsFiltrees)
-//
-// });
-//
-// const boutonFiltrer1 = document.getElementById("3");
-// boutonFiltrer1.addEventListener("click", function () {
-//     const visitsFiltrees = copyArray.filter(function (visit) {
-//         return visit.category.id !== 3;
-//     });
-//     document.querySelector(".gallery").innerHTML = "";
-//     genererVisits(visitsFiltrees);
-//     console.log(visitsFiltrees)
-//
-// });
-// console.log(uniqueCategories.size)
-//
