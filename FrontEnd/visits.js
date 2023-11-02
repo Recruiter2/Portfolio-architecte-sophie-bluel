@@ -25,13 +25,9 @@ genererVisits(visits);
 
 // Récupération de l'élément du DOM qui accueillera les boutons
 const sectionFiches = document.getElementById("visits_filter");
-// Création d’un  dédiée à une pièce automobile
-const buttonAll = document.createElement("button");
-buttonAll.id = "all_visits"
 
 //bouton ajouté
 const visitShowAll = document.createElement("button");
-visitShowAll.id = "showAll_visits";
 visitShowAll.textContent = "Tous";
 
 // On rattache la balise button a la section visits_filter
@@ -40,16 +36,6 @@ sectionFiches.appendChild(visitShowAll).addEventListener("click", function () {
     genererVisits(visits);
 });
 
-
-// const boutonFiltrer = document.getElementById("1");
-// boutonFiltrer.addEventListener("click", function () {
-//     const visitsFiltrees = copyArray.filter(function (visit) {
-//         return visit.category.id != 1;
-//     });
-//     document.querySelector(".gallery").innerHTML = "";
-//     genererVisits(visitsFiltrees);
-//     console.log(visitsFiltrees);
-// });
 
 //2 sets are created with cat id&names
 let categories = visits.map(visit => visit.category.id);
@@ -61,20 +47,10 @@ let categories_name = visits.map(visit => visit.category.name);
 let uniqueCategories_name = new Set(categories_name);
 console.log(uniqueCategories_name);
 
-// console.log(visits, "tmpValue")
 
-// let tmpVisit = visits.slice(0);
-//  console.log(tmpVisit[0].category.id, "tmpValue")
-
-// function trierVisits(visits, _id){
-//     visits.filter(function (visit) {
-//         return visit.category.id = _id;
-//     });
-// }
 
 for(let i = 0; i < uniqueCategories.size; i++){
     let filterButton = document.createElement("button");
-    filterButton.id =  Array.from(uniqueCategories)[i];
     filterButton.textContent = Array.from(uniqueCategories_name)[i];
     filterButton.addEventListener("click", function () {
         const visitsFiltrees = copyArray.filter(function (visit) {
