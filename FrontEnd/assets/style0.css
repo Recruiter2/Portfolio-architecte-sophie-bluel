@@ -1,0 +1,40 @@
+li a {
+  font-weight: bold;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+  align-items: center;
+}
+
+header, main, nav ul {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#spacer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer {
+  width: 100%;
+}
+footer nav {
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style0.css.map */
