@@ -50,7 +50,7 @@ export function ajoutListenerConnexion() {
                 let user = await reponse.json();
                 // console.log(user.token)
                 // Stockage des informations dans le localStorage
-                window.localStorage.setItem("user", user.token);
+                window.localStorage.setItem("token", user.token);
                 window.location = "."
                 // let avis = window.localStorage.getItem('token');
                 // console.log(avis)
