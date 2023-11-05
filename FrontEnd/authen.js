@@ -65,20 +65,20 @@ ajoutListenerConnexion();
 
 
 function ajoutDomErorPw(){
-    const mailError = document.querySelector("#mail");
+    const mailError = document.querySelector("#password");
     const msg = document.createElement("p");
-    msg.innerText = "Email incorrect"
-    mailError.insertAdjacentElement(afterend, msg)
+    msg.innerText = "Mot de passe incorrect";
+    mailError.insertAdjacentElement("afterEnd", msg)
 
-};
+}
 
 function ajoutDomErorMail(){
-    const passwordError = document.querySelector("#password");
+    const passwordError = document.querySelector("#mail");
     const msg = document.createElement("p");
-    msg.innerText = "Mot de passe incorrect"
-    passwordError.insertAdjacentElement(afterend, msg)
+    msg.innerText = "Email incorrect";
+    passwordError.insertAdjacentElement("afterEnd", msg)
 
-};
+}
 
 function rm_tag(){
     //cette fº enleve les p av msg err
