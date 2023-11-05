@@ -21,6 +21,7 @@
 export function ajoutListenerConnexion() {
     const formulaireConnexion = document.querySelector(".login");
     formulaireConnexion.addEventListener("submit", async function (event) {
+        rm_tag();
         event.preventDefault();
         // Création de l’objet du nouvel user.
         const user_input = {
@@ -32,7 +33,9 @@ export function ajoutListenerConnexion() {
         // Appel de la fonction fetch avec toutes les informations nécessaires
         const reponse = await fetch("http://localhost:5678/api/users/login", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                // 'Accept': 'application/json',
+                "Content-Type": "application/json" },
             body: chargeUtile
         });
         // console.log("reponse.status =", reponse);
@@ -77,6 +80,13 @@ function ajoutDomErorMail(){
 
 };
 
+function rm_tag(){
+    //cette fº enleve les p av msg err
+    let Error = document.querySelector("p");
+    if (Error) {
+        Error.remove();
+    }
+}
 
 // console.log("reponse.status =", reponse);
 // if (reponse.status === 200) {
