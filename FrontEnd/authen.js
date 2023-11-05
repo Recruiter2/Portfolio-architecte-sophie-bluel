@@ -38,7 +38,12 @@ export function ajoutListenerConnexion() {
                 "Content-Type": "application/json" },
             body: chargeUtile
         });
-        // console.log("reponse.status =", reponse);
+        //
+
+        //  console.log("reponse.status =", reponse);
+        // let user = await reponse.clone();
+        // console.log(user)
+
         switch (reponse.status) {
             case 200:
                 // Récupération des user depuis l'API
@@ -46,6 +51,8 @@ export function ajoutListenerConnexion() {
                 // Stockage des informations dans le localStorage
                 window.localStorage.setItem("user", user.token);
                 window.location = "."
+                // let avis = window.localStorage.getItem('token');
+                // console.log(avis)
                 break;
             case 401:
                 ajoutDomErorPw();
