@@ -47,7 +47,8 @@ export function ajoutListenerConnexion() {
         switch (reponse.status) {
             case 200:
                 // Récupération des user depuis l'API
-                let user =  reponse.json();
+                let user = await reponse.json();
+                // console.log(user.token)
                 // Stockage des informations dans le localStorage
                 window.localStorage.setItem("user", user.token);
                 window.location = "."
