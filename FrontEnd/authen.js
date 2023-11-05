@@ -60,7 +60,7 @@ export function ajoutListenerConnexion() {
                 break;
             case 404:
                 ajoutDomErorMail();
-
+                break;
             default:
                 console.log(`An error occured during login form submission`);
         }
