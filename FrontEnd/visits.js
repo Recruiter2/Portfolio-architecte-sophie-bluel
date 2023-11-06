@@ -66,3 +66,168 @@ for(let i = 0; i < uniqueCategories.size; i++){
 }
 
 let copyArray = visits.slice(0)
+
+
+//mode editeur
+let loggedIn = window.localStorage.getItem('token');
+// console.log("b4", loggedIn)
+
+
+if (loggedIn === null){
+    console.log("pas connecte")
+}else if (loggedIn){
+    ajoutDomEditor()
+}else  {
+    console.log("erreur_verif_loggedin", loggedIn.token)
+
+}
+function ajoutDomEditor (){
+    const titleH2 = document.querySelector(".three");
+    const link = document.querySelector(".three");
+    const modifier = document.createElement("a");
+    modifier.innerText = " modifier";
+    modifier.addEventListener("click", function () {
+        // console.log("clicked");
+        afficherEditeur();
+        });
+    // modifier.href = ""
+    let editorSquare =  document.createElement("i");
+    editorSquare.classList.add('fa-regular', 'fa-pen-to-square');
+        // "< i className = \"fa-regular fa-pen-to-square\" > < /i>";
+    titleH2.insertAdjacentElement("afterbegin", modifier)
+    link.querySelectorAll(":scope > a");
+    // console.log(link)
+    modifier.insertAdjacentElement("afterbegin", editorSquare)
+
+}
+function afficherEditeur(){
+    const modifier = document.createElement("div");
+    modifier.classList.add('editor_modale');
+    const body = document.querySelector("body");
+    body.insertAdjacentElement("afterbegin", modifier)
+    afficherModale()
+
+}
+
+function afficherModale(){
+    const modale = document.createElement("div");
+    modale.classList.add('modale');
+    const editeur = document.querySelector(".editor_modale");
+    editeur.appendChild(modale)
+    afficherBoutonX()
+    afficherTitre()
+
+    const photosContainer = document.createElement("div");
+    photosContainer.classList.add('photos');
+
+    afficherGallery(visits)
+}
+
+
+function afficherTitre(){
+    console.log('t')
+
+    const modifier = document.createElement("h3");
+    modifier.classList.add('title_h3');
+    modifier.innerHTML = "Gallerie photo"
+    const editeur = document.querySelector(".fa-xmark");
+
+    editeur.insertAdjacentElement("afterend", modifier)
+
+
+}
+
+function afficherBoutonX(){
+    //X bouton fermer modale X
+    console.log('x')
+    const xmark = document.createElement("i");
+    xmark.classList.add('fa-solid', 'fa-xmark');
+
+    xmark.addEventListener("click", function () {
+        document.querySelector(".editor_modale").remove();//suppr tt
+    });
+    const editeur = document.querySelector(".modale");
+    editeur.insertAdjacentElement("afterbegin", xmark)
+
+}
+
+function afficherGallery(visits){
+    // Récupération de l'élément du DOM qui accueillera les fiches
+    const sectionGallery = document.querySelector(".modale");
+    //inside modale
+    const imgs = document.createElement("div");
+    imgs.classList.add('imgs');
+    visits.forEach((visit) => {
+        // Création d’une balise dédiée à une pièce
+        const visitElement = document.createElement("figure");
+        // Création des balises
+        const imageElement = document.createElement("img");
+        imageElement.src = visit.imageUrl;
+        visitElement.appendChild(imageElement);
+        let id = visit.id;
+        delPhoto(visitElement, id);
+        // On rattache la balise figure au conteneur imgs
+        imgs.appendChild(visitElement)
+
+    });
+    sectionGallery.appendChild(imgs)
+    afficherBr()
+
+}
+
+function afficherBr(){
+    const modifier = document.createElement("br");
+    // modifier.classList.add('modale');
+    const editeur = document.querySelector(".modale");
+    editeur.insertAdjacentElement("afterend", modifier)
+}
+
+
+function ajouterPhoto(){
+    const modifier = document.createElement("button");
+    modifier.classList.add('modale');
+    modifier.addEventListener("click", async function () {
+        document.querySelector(".gallery").innerHTML = "";
+        genererVisits(visits);
+    });
+    const editeur = document.querySelector("br");
+    editeur.insertAdjacentElement("afterend", modifier)
+}
+
+function delPhoto(visitElement, id){
+    //ajout btn suppr foreach img
+    const basket = document.createElement("i");
+    basket.classList.add('fa-solid', 'fa-trash-can');
+
+
+    visitElement.appendChild(basket)
+    basket.addEventListener("click", async function () {
+        visitElement.remove();//suppr img
+        // const user_input = {
+        //     Authorization:  loggedIn
+        // };
+        // fetch('http://localhost:5678/api/', {
+        //     method: "POST",
+        //     headers: {Authorization: 'Bearer' + loggedIn }
+        // })
+        fetch('http://localhost:5678/api/works/' + id, {
+            headers: {
+                Authorization: 'Bearer ' + loggedIn },
+            method: 'DELETE'
+        })
+        // const avis = await reponse.json();
+        delPhoto_db(id)
+    });
+
+}
+
+function delPhoto_db(id) {
+
+}
+
+function cleck(){
+    let link = document.querySelector('.three a');
+    // for(var i = 0; i < 50; i++)
+        link.click();
+}
+cleck()
