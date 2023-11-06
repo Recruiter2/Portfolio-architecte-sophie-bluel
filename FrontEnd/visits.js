@@ -58,7 +58,7 @@ for(let i = 0; i < uniqueCategories.size; i++){
         const visitsFiltrees = copyArray.filter(function (visit) {
             return visit.category.id === Array.from(uniqueCategories)[i];
         });
-        document.querySelector(".gallery").innerHTML = "";
+        document.querySelector(".gallery").innerHTML = "";//suppr tt
         genererVisits(visitsFiltrees);
     });
     // On rattache la balise button a la section visits_filter
