@@ -1,7 +1,7 @@
 // Récupération des visites depuis le fichier JSON
 const reponse = await fetch('http://localhost:5678/api/works');
 const visits = await reponse.json();
-
+// console.log(visits)
 function genererVisits(visits){
     visits.forEach((visit) => {
         // Récupération de l'élément du DOM qui accueillera les fiches
@@ -37,6 +37,7 @@ sectionFiches.appendChild(visitShowAll).addEventListener("click", function () {
 });
 
 
+// on cree des clefs unique pour les categories
 //2 sets are created with cat id&names
 let categories = visits.map(visit => visit.category.id);
 // console.log(categories)
@@ -45,10 +46,11 @@ let uniqueCategories = new Set(categories);
 
 let categories_name = visits.map(visit => visit.category.name);
 let uniqueCategories_name = new Set(categories_name);
-console.log(uniqueCategories_name);
+// console.log(uniqueCategories_name);
 
 
-
+//on itere sur les cler uniques on cree un bouton par clef et on leur ajoute a chaqu'un un listener
+//le listener une fois enclanche va suppr tt et ajoute uniquement les visites de la categori concerne   amelioration possible .forEach((visit, index) foreach av un index
 for(let i = 0; i < uniqueCategories.size; i++){
     let filterButton = document.createElement("button");
     filterButton.textContent = Array.from(uniqueCategories_name)[i];
