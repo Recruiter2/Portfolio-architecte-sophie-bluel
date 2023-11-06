@@ -137,6 +137,65 @@ li:hover {
   margin-bottom: 0.5em;
 }
 
+.center-v {
+  display: flex;
+}
+
+.center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  place-items: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  order: -1;
+  width: fit-content;
+}
+
+.one {
+  align-self: center;
+  grid-column: 1/3;
+  grid-row: 1;
+}
+
+.two {
+  grid-column: 2/3;
+  grid-row: 1;
+  order: -1;
+}
+
+.three {
+  grid-column: 3/3;
+  grid-row: 1/3;
+  order: -1;
+  width: fit-content;
+  align-self: center;
+  padding-left: 1rem;
+}
+
+.four {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.five {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.six {
+  grid-column: 3;
+  grid-row: 4;
+}
+
 #portfolio h2 {
   text-align: center;
 }
