@@ -307,7 +307,7 @@ function ajoutListenerUpload(form) {
         switch (reponse.status) {
             case 201:
                 // Récupération des user depuis l'API
-                let upload = await reponse.json();
+                // let upload = await reponse.json();
                 // console.log(user.token)
                 // Stockage des informations dans le localStorage
                 // window.localStorage.setItem("token", user.token);
