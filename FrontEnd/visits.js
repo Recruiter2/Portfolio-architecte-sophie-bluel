@@ -155,7 +155,7 @@ function afficherBoutonX(){
     xmark.classList.add('fa-solid', 'fa-xmark');
 
     xmark.addEventListener("click", function () {
-        document.querySelector(".editor_modale").remove();//suppr tt
+        document.querySelector(".editor_modale").style.display = "none";//suppr tt
     });
     const editeur = document.querySelector(".modale");
     editeur.insertAdjacentElement("afterbegin", xmark)
