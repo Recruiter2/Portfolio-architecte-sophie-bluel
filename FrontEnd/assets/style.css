@@ -59,11 +59,11 @@ body {
   font-family: "Syne";
   border-radius: 25px;
   border: 2px solid #1D6154;
-  background: none;
+  background: #1D6154;
   height: 2.5rem;
   min-width: 7rem;
   width: fit-content;
-  color: #1D6154;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   margin-top: 2rem;
   padding: 0 0.7rem 0 0.7rem;
