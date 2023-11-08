@@ -1,7 +1,13 @@
 // Récupération des visites depuis le fichier JSON
 const reponse = await fetch('http://localhost:5678/api/works');
-const visits = await reponse.json();
+let visits = await reponse.json()
+// window.localStorage.setItem("visits", JSON.stringify(visits));
+//
+//  visits =   window.localStorage.getItem('visits')
+// let visits = JSON.parse(visits);
+//
 // console.log(visits)
+
 function genererVisits(visits){
     visits.forEach((visit) => {
         // Récupération de l'élément du DOM qui accueillera les fiches
