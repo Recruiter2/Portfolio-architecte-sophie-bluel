@@ -243,6 +243,81 @@ function genererForm(){
     // editeur.insertAdjacentElement("afterend", modifier)
 }
 
+function uploadField(form) {
+    const modifier = document.createElement("input"); //bouton upload img
+    modifier.classList.add('upload');
+    modifier.type = 'file'
+    modifier.name = 'image'
+    modifier.id = 'myPhoto'
+    // modifier.innerHTML = "+ Ajouter photo";
+    form.appendChild(modifier)
+    ajoutListenerUpload(form)
+
+}
+
+function ajoutListenerUpload(form) {
+    const formulaireUpload = document.querySelector(".img form");
+    form.addEventListener("submit", async function (event) {
+        console.log('event listener was triggered')
+        // rm_tag();
+        event.preventDefault();
+        // Création de l’objet du nouvel user.
+
+
+        const title = event.target.querySelector("[name=titre]").value
+        const category = event.target.querySelector("[name=categorie]").value
+        const image = event.target.querySelector("[name=image]").files[0]
+        const visitData = new FormData();
+        visitData.append("title", title);
+        visitData.append("category", category); // le numéro 123456 est converti immédiatement en chaîne "123456"
+
+// fichier HTML choisi par l'utilisateur
+        visitData.append("image", image);
+        // Création de la charge utile au format JSON
+        // const chargeUtile = JSON.stringify(user_input);
+        // Appel de la fonction fetch avec toutes les informations nécessaires
+        const reponse = await fetch("http://localhost:5678/api/works", {
+            method: "POST",
+            headers: {
+                'accept': 'application/json',
+                Authorization: 'Bearer ' + loggedIn
+                // "Content-Type": "multipart/form-data"
+                },
+            body: visitData
+
+
+        });
+        console.log(reponse, visitData)
+        //
+
+        //  console.log("reponse.status =", reponse);
+        // let user = await reponse.clone();
+         console.log(reponse.status)
+
+        switch (reponse.status) {
+            case 200:
+                // Récupération des user depuis l'API
+                let upload = await reponse.json();
+                // console.log(user.token)
+                // Stockage des informations dans le localStorage
+                // window.localStorage.setItem("token", user.token);
+                // window.location = "."
+                // let avis = window.localStorage.getItem('token');
+                console.log(upload)
+                break;
+            case 401:
+                // ajoutDomErorPw();
+                break;
+            case 404:
+                // ajoutDomErorMail();
+                break;
+            default:
+                console.log(`An error occured during upload form submission or not...`);
+        }
+        console.log('event listener ended')
+});
+
+}
 
 function ajouterPhoto(){
     const modifier = document.createElement("button");
