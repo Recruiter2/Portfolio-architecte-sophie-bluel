@@ -176,8 +176,8 @@ function afficherGallery(visits){
 }
 
 function afficherBr(){
-    const modifier = document.createElement("br");
-    // modifier.classList.add('modale');
+    const modifier = document.createElement("div");
+    modifier.classList.add('br');
     const editeur = document.querySelector(".modale");
     editeur.insertAdjacentElement("afterend", modifier)
 }
