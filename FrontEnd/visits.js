@@ -347,7 +347,7 @@ function delPhoto(visitElement, id){
 
 
 
-function cleck(){
+function cleck(){ //function used for debug
     let link = document.querySelector('.three a');
     // for(var i = 0; i < 50; i++)
         link.click();
