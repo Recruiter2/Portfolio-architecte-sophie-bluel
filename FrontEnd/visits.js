@@ -381,4 +381,4 @@ function cleck(){ //function used for debug
     // for(var i = 0; i < 50; i++)
         link.click();
 }
-cleck()
+// cleck()
