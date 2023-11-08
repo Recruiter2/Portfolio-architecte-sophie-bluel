@@ -93,8 +93,13 @@ function ajoutDomEditor (){
     const modifier = document.createElement("a");
     modifier.innerText = " modifier";
     modifier.addEventListener("click", function () {
-        // console.log("clicked");
-        afficherEditeur();
+        // console.log(document.querySelector(".modale"));
+        if (document.querySelector(".editor_modale") === null){
+        afficherEditeur();} //cree editeur
+        else {
+            document.querySelector(".editor_modale").style.display = ""; //afficher editeur
+
+        }
         });
     // modifier.href = ""
     let editorSquare =  document.createElement("i");
