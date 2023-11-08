@@ -95,6 +95,10 @@ body {
   padding: 0.2rem 0.2rem;
   border-radius: 0.2rem;
 }
+.modale .br {
+  width: 10rem;
+  border: 1px solid #dee2e6;
+}
 
 h3 {
   margin-top: 3rem;
