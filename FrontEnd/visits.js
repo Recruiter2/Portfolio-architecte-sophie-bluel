@@ -180,7 +180,67 @@ function afficherBr(){
     const modifier = document.createElement("div");
     modifier.classList.add('br');
     const editeur = document.querySelector(".modale");
-    editeur.insertAdjacentElement("afterend", modifier)
+    editeur.insertAdjacentElement("beforeend", modifier)
+}
+function deleteBr(){
+    document.querySelector(".br").remove()
+}
+function afficherButtonAjouter(){
+    const modifier = document.createElement("button");
+    modifier.classList.add('ajouter');
+    modifier.innerHTML = "Ajouter une photo";
+    modifier.addEventListener("click", async function () {
+        document.querySelector(".title_h3").innerHTML = "Ajout photo";
+        document.querySelector(".imgs").innerHTML = "";
+        modifier.remove()
+        deleteBr()
+        genererForm();
+    });
+    const editeur = document.querySelector(".modale");
+    editeur.insertAdjacentElement("beforeend", modifier)
+}
+
+function genererForm(){
+    const form = document.createElement("form"); //bouton upload img
+    const container =document.querySelector(".imgs")
+    container.id = "concact";
+    container.appendChild(form)
+    uploadField(form)
+
+
+    let lTitre = document.createElement("label");
+    lTitre.innerHTML = "Titre";
+
+    const tInput = document.createElement("input")
+    tInput.name = "titre"
+    tInput.type = "text"
+
+    form.appendChild(lTitre)
+    form.appendChild(tInput)
+    const lCategorie = document.createElement("label");
+    lCategorie.innerHTML = "Categorie";
+
+    const cInput = document.createElement("input")
+    cInput.name = "categorie"
+    cInput.type = "integer"
+
+    form.appendChild(lCategorie)
+    form.appendChild(cInput)
+    const modifier = document.createElement("div");
+    modifier.classList.add('br');
+    form.appendChild(modifier)
+    const valider = document.createElement("input")
+    valider.type = "submit"
+    valider.value = "Valider"
+    form.appendChild(valider)
+
+    // modifier.classList.add('modale');
+    // modifier.addEventListener("click", async function () {
+    //     document.querySelector(".gallery").innerHTML = "";
+    //     genererVisits(visits);
+    // });
+    // const editeur = document.querySelector("br");
+    // editeur.insertAdjacentElement("afterend", modifier)
 }
 
 
