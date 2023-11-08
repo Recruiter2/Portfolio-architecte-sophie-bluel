@@ -256,7 +256,6 @@ function uploadField(form) {
 }
 
 function ajoutListenerUpload(form) {
-    const formulaireUpload = document.querySelector(".img form");
     form.addEventListener("submit", async function (event) {
         console.log('event listener was triggered')
         // rm_tag();
@@ -319,16 +318,6 @@ function ajoutListenerUpload(form) {
 
 }
 
-function ajouterPhoto(){
-    const modifier = document.createElement("button");
-    modifier.classList.add('modale');
-    modifier.addEventListener("click", async function () {
-        document.querySelector(".gallery").innerHTML = "";
-        genererVisits(visits);
-    });
-    const editeur = document.querySelector("br");
-    editeur.insertAdjacentElement("afterend", modifier)
-}
 
 function delPhoto(visitElement, id){
     //ajout btn suppr foreach img
@@ -352,14 +341,11 @@ function delPhoto(visitElement, id){
             method: 'DELETE'
         })
         // const avis = await reponse.json();
-        delPhoto_db(id)
     });
 
 }
 
-function delPhoto_db(id) {
 
-}
 
 function cleck(){
     let link = document.querySelector('.three a');
