@@ -286,15 +286,15 @@ function ajoutListenerUpload(form) {
 
 
         });
-        console.log(reponse, visitData)
+        // console.log(reponse, visitData)
         //
 
         //  console.log("reponse.status =", reponse);
         // let user = await reponse.clone();
-         console.log(reponse.status)
+        //  console.log(reponse.status)
 
         switch (reponse.status) {
-            case 200:
+            case 201:
                 // Récupération des user depuis l'API
                 let upload = await reponse.json();
                 // console.log(user.token)
@@ -304,13 +304,16 @@ function ajoutListenerUpload(form) {
                 // let avis = window.localStorage.getItem('token');
                 console.log(upload)
                 break;
+            case 400:
+                // ajoutDomErorPw();
+                break;
             case 401:
                 // ajoutDomErorPw();
                 break;
-            case 404:
+            case 404://doesn't exist
                 // ajoutDomErorMail();
                 break;
-            default:
+            default: //500
                 console.log(`An error occured during upload form submission or not...`);
         }
         console.log('event listener ended')
