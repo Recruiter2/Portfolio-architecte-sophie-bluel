@@ -313,7 +313,22 @@ function ajoutListenerUpload(form) {
                 // window.localStorage.setItem("token", user.token);
                 // window.location = "."
                 // let avis = window.localStorage.getItem('token');
-                console.log(upload)
+                // console.log(upload)
+                //this part is responsible for updating gallery n modale gallery pics
+                document.getElementById("gallery").innerHTML = ""
+
+                const reponse = await fetch('http://localhost:5678/api/works');
+                let visits = await reponse.json()
+                //window.localStorage.setItem("visits", JSON.stringify(visits));
+
+                // visits =   window.localStorage.getItem('visits')
+                // visits = JSON.parse(visits);
+                afficherGallery(visits)
+                document.querySelector(".imgs").innerHTML = ""
+                document.querySelector(".editor_modale").style.display = "none";
+
+                genererVisits(visits);
+
                 break;
             case 400:
                 // ajoutDomErorPw();
