@@ -172,6 +172,7 @@ function afficherGallery(visits){
     });
     sectionGallery.appendChild(imgs)
     afficherBr()
+    afficherButtonAjouter()
 
 }
 
