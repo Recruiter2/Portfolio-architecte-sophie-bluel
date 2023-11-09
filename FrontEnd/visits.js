@@ -81,10 +81,24 @@ let loggedIn = window.localStorage.getItem('token');
 
 if (loggedIn === null){
     console.log("pas connecte")
-}else if (loggedIn){
+}else if (loggedIn != null){
+    ajoutLogOut()
     ajoutDomEditor()
 }else  {
     console.log("erreur_verif_loggedin", loggedIn.token)
+
+}
+function ajoutLogOut (){
+    let logIn =  document.querySelector("#login");
+    logIn.href = ""
+    logIn.innerHTML = "LogOut"
+    logIn.addEventListener("click", function () {
+        window.localStorage.removeItem('token');
+        // delete(loggedIn)
+        // loggedIn = null;
+        window.location = ".";
+    });
+
 
 }
 function ajoutDomEditor (){
