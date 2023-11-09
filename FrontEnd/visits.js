@@ -84,8 +84,9 @@ if (loggedIn === null){
 }else if (loggedIn != null){
     ajoutLogOut()
     ajoutDomEditor()
+    // console.log("1erreur_verif_loggedin", loggedIn)
 }else  {
-    console.log("erreur_verif_loggedin", loggedIn.token)
+    // console.log("2erreur_verif_loggedin", loggedIn.token)
 
 }
 function ajoutLogOut (){
