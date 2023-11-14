@@ -320,14 +320,32 @@ function genererForm(){
 }
 
 function uploadField(form) {
-    const modifier = document.createElement("input"); //bouton upload img
-    modifier.classList.add('upload');
-    modifier.type = 'file'
-    modifier.name = 'image'
-    modifier.id = 'myPhoto'
-    // modifier.innerHTML = "+ Ajouter photo";
-    form.appendChild(modifier)
-    ajoutListenerUpload(form)
+    const container = document.createElement("div"); //bouton upload img
+    container.id = "inputUploadField"
+    const imgIcon = document.createElement("i"); //ajout icone img
+    imgIcon.classList.add('fa-regular', 'fa-image');
+    const uploadPhoto = document.createElement("input"); //bouton upload img
+    uploadPhoto.classList.add('upload');
+    uploadPhoto.type = 'file'
+    uploadPhoto.name = 'image'
+    uploadPhoto.id = 'myPhoto'
+
+    container.appendChild(imgIcon)
+
+    form.appendChild(uploadPhoto)
+    const buttonUpload = document.createElement("input"); //bouton upload img
+    buttonUpload.type = 'button'
+    buttonUpload.value = '+ Ajouter photo'
+    buttonUpload.addEventListener("click",  function () {
+        uploadPhoto.click();
+    });
+
+    container.appendChild(buttonUpload)
+    form.appendChild(container)
+    showPreviewUploadedPhoto()
+    const imgTypesAccept = document.createElement("p"); //bouton upload img
+    imgTypesAccept.innerHTML = "jpg, png: 4mo max";
+    container.appendChild(imgTypesAccept)
 
 }
 
