@@ -2,12 +2,27 @@
 // Récupération des visites depuis le fichier JSON
 let reponse = await fetch('http://localhost:5678/api/works');
 let visits = await reponse.json()
-// window.localStorage.setItem("visits", JSON.stringify(visits));
+window.localStorage.setItem("visits", JSON.stringify(visits));
 //
-//  visits =   window.localStorage.getItem('visits')
-// let visits = JSON.parse(visits);
+visits =   window.localStorage.getItem('visits')
 //
 // console.log(visits)
+visits = JSON.parse(visits); //parse data becomes javascript object
+console.log(visits)
+
+async function recupFichierVisitsApi(reponse, visits) {
+    // Récupération des visites depuis le fichier JSON
+    reponse = await fetch('http://localhost:5678/api/works');
+    visits = await reponse.json()
+    window.localStorage.setItem("visits", JSON.stringify(visits));
+//
+    visits =   window.localStorage.getItem('visits')
+//
+// console.log(visits)
+    visits = JSON.parse(visits); //parse data becomes javascript object
+    console.log('recupFichierVisitsApi parsed visits 23 :',visits)
+    return visits
+}
 
 function genererVisits(visits){
     visits.forEach((visit) => {
