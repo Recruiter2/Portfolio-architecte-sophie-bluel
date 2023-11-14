@@ -270,6 +270,7 @@ function afficherButtonAjouter(){
         modifier.remove()
         deleteBr()
         genererForm();
+        ajouterModaleBtnRetour()
     });
     const editeur = document.querySelector(".modale");
     editeur.insertAdjacentElement("beforeend", modifier)
