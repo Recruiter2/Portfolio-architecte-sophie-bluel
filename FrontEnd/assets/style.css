@@ -269,6 +269,9 @@ header {
   justify-content: space-between;
   margin: 50px 0;
 }
+header .nav {
+  display: flex;
+}
 
 header, main, nav ul {
   margin: auto;
