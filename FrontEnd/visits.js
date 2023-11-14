@@ -283,15 +283,11 @@ function genererForm(){
     container.id = "concact";
     container.appendChild(form)
     uploadField(form)
-
-
     let lTitre = document.createElement("label");
     lTitre.innerHTML = "Titre";
-
     const tInput = document.createElement("input")
     tInput.name = "titre"
     tInput.type = "text"
-
     form.appendChild(lTitre)
     form.appendChild(tInput)
     const lCategorie = document.createElement("label");
