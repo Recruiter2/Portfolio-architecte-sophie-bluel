@@ -150,6 +150,7 @@ function ajoutDomBand(){
     banner.style.display = '';
 }
 function afficherEditeur(){
+    //creates transparent cover 100% screen
     const modifier = document.createElement("div");
     modifier.classList.add('editor_modale');
     const body = document.querySelector("body");
