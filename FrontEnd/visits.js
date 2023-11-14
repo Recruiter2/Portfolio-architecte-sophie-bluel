@@ -130,6 +130,7 @@ function ajoutDomEditor(){
         afficherEditeur();} //cree editeur
         else {
             document.querySelector(".editor_modale").style.display = ""; //afficher editeur
+            document.querySelector(".editor_modale").style.visibility = "visible";
 
         }
         });
