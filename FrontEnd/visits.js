@@ -279,14 +279,16 @@ function afficherButtonAjouter(){
 function genererForm(){
     // console.log("generer form active")
     const form = document.createElement("form"); //bouton upload img
+    form.id = "uploadPhotoCategory"
     const container =document.querySelector(".imgs")
-    container.id = "concact";
+    container.id = "container_form";
     container.appendChild(form)
     uploadField(form)
     let lTitre = document.createElement("label");
     lTitre.innerHTML = "Titre";
     const tInput = document.createElement("input")
     tInput.name = "titre"
+    tInput.classList.add("upload")
     tInput.type = "text"
     form.appendChild(lTitre)
     form.appendChild(tInput)
