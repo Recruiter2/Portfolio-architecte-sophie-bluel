@@ -104,7 +104,7 @@ if (loggedIn === null){
     ajoutDomBand()
     // console.log("1erreur_verif_loggedin", loggedIn)
 }else  {
-    // console.log("2erreur_verif_loggedin", loggedIn.token)
+    console.log("an error occured w login process")
 
 }
 function ajoutLogOut (){
