@@ -455,6 +455,25 @@ function addCategoriesForm(cInput, categories){
         // On rattache la balise option a la section select
         cInput.appendChild(categori);
     });
+    //ajout caret
+    const caret = document.createElement("i");
+    caret.classList.add('fa-solid', 'fa-angle-down')
+    cInput.appendChild(caret);
+
+}
+// categories_form()
+
+function showPreviewUploadedPhoto(){
+    let uploadFieldSelector = document.getElementById("inputUploadField")
+    const img = document.createElement("img");
+
+    document.getElementById('myPhoto').onchange = function () {
+        uploadFieldSelector.innerHTML = ""
+        uploadFieldSelector.appendChild(img)
+        const src = URL.createObjectURL(this.files[0])
+        img.src = src
+    }
+}
 
 }
 
