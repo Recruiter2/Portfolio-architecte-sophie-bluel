@@ -196,7 +196,37 @@ function afficherTitre(){
 
 }
 
-function afficherGallery(visits){
+function delPhoto(visitElement, id){
+    //
+    //ajout btn suppr foreach img
+    const basket = document.createElement("i");
+    basket.classList.add('fa-solid', 'fa-trash-can');
+
+
+    visitElement.appendChild(basket)
+    basket.addEventListener("click", async function () {
+        document.getElementById(id).remove()
+        visitElement.remove();//suppr img
+        await fetch('http://localhost:5678/api/works/' + id, {
+            headers: {
+                Authorization: 'Bearer ' + loggedIn },
+            method: 'DELETE'
+        })
+        // await recupFichierVisitsApi(reponse, visits)
+        console.log("visitr removal failed",visits)
+
+        // document.querySelector(".gallery").innerHTML = ""
+
+        await  console.log('gallery").innerHTML 416 visits :', visits)
+        // await genererVisits(visits)
+    });
+
+
+
+}
+
+function afficherGalleryInsideModale(visits){
+
     // Récupération de l'élément du DOM qui accueillera les fiches
     const sectionGallery = document.querySelector(".modale");
     //inside modale
