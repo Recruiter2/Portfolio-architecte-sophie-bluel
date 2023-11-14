@@ -165,7 +165,6 @@ function afficherModale(){
     editeur.appendChild(modale)
     afficherBoutonX()
     afficherTitre()
-
     const photosContainer = document.createElement("div");
     photosContainer.classList.add('photos');
 
