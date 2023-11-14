@@ -423,7 +423,7 @@ function ajoutListenerUpload() {
                 console.log(`An error occured during upload form submission or not...`);
         }
         console.log('event listener ended')
-});
+    });
 
 }
 
