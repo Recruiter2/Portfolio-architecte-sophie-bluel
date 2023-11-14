@@ -173,15 +173,11 @@ function afficherModale(){
 
 function afficherTitre(){
     console.log('t')
-
     const modifier = document.createElement("h3");
     modifier.classList.add('title_h3');
     modifier.innerHTML = "Gallerie photo"
     const editeur = document.querySelector(".fa-xmark");
-
     editeur.insertAdjacentElement("afterend", modifier)
-
-
 }
 
 function afficherBoutonX(){
