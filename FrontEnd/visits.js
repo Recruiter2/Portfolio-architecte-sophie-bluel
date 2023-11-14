@@ -28,8 +28,9 @@ function genererVisits(visits){
     visits.forEach((visit) => {
         // Récupération de l'élément du DOM qui accueillera les fiches
         const sectionGallery = document.getElementById("gallery");
-        // Création d’une balise dédiée à une pièce
+        // Création d’une balise dédiée à une visite av id
         const visitElement = document.createElement("figure");
+        visitElement.id = visit.id
         // Création des balises
         const imageElement = document.createElement("img");
         imageElement.src = visit.imageUrl;
