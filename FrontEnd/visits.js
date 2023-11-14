@@ -381,7 +381,7 @@ function ajoutListenerUpload() {
             body: visitData
 
         });
-        // console.log(reponse, visitData)
+        console.log(reponse)
         //
 
         //  console.log("reponse.status =", reponse);
