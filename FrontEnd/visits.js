@@ -501,17 +501,24 @@ function checkIfInputEmpty(){ //check IfI nput Empty in all input fields
     let fields = document.getElementsByClassName("upload") //validated-field
 
 // Array.from will convert the HTMLCollection to Native Array.
-    if (Array.from(fields).length > 0) {
+    let nbInputFields = Array.from(fields).length
+    if (nbInputFields > 0) {
         // Loop
         Array.from(fields).forEach(field => {
             // Add Event for each field.
             field.addEventListener("input", function(e) {
-                console.log(e.target.value)
+                let myValue = e.target.value
+                // console.log(field)
                 if (!e.target.value) {
+                    console.log("first if of input check reached (invalid)")
+                    console.log("nbInputFields 1 :", nbInputFields)
                     buttonInvalid()
+                    nbInputFields += 1
+                    showErrorEmpty(field)
                     // e.target.classList.add("not-valid")
                 } else {
-                    buttonValid()
+                    console.log(nbInputFields)
+                    compteNbFieldOk("nbInputFields 2 :", nbInputFields)
                     // e.target.classList.remove("not-valid")
                 }
             })
@@ -519,10 +526,12 @@ function checkIfInputEmpty(){ //check IfI nput Empty in all input fields
     }
 }
 
-function buttonValid() {
-    let mybutton = document.getElementById('cofirmerUploadForm')
-    mybutton.disabled = false
-    mybutton.classList.remove("disabled")
+function compteNbFieldOk(nbInputFields) {
+    // compteur :
+    nbInputFields -= 1
+    if (0 === nbInputFields) {
+        buttonValid()
+    }
 }
 
 function buttonInvalid() {
@@ -531,9 +540,32 @@ function buttonInvalid() {
     mybutton.classList.add("disabled")
 }
 
+
+function buttonValid() {
+    let mybutton = document.getElementById('cofirmerUploadForm')
+    mybutton.disabled = false
+    mybutton.classList.remove("disabled")
+}
+
+
+function showErrorEmpty(field) {
+    console.log("showErrorEmpty field was triggered")
+    let erreur = document.createElement("p");
+    erreur.classList.add("erreur input vide")
+    erreur.innerHTML = "Veuillez ajouter l'element : " + field.name
+    let mybutton = document.getElementById('cofirmerUploadForm')
+    mybutton.addEventListener("click", function () {
+        field.insertAdjacentElement("beforeend", erreur) //on ajoute l'erreur a cote donc en dessou
+    });
+//    default
+}
+
 function cleck(){ //function used for debug
-    let link = document.querySelector('.three a');
+    const link = document.querySelector('.three a');
     // for(var i = 0; i < 50; i++)
         link.click();
+    const link2 = document.querySelector('.ajouter');
+     link2.click();
+
 }
-// cleck()
+cleck()
