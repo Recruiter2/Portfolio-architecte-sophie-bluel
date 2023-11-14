@@ -185,8 +185,11 @@ function afficherTitre(){
     const xmark = document.createElement("i");
     xmark.classList.add('fa-solid', 'fa-xmark');
 
-    xmark.addEventListener("click", function () {
-        document.querySelector(".editor_modale").style.display = "none";//suppr tt
+    xmark.addEventListener("click", async function () {
+        await recupFichierVisitsApi(reponse, visits)
+        // document.querySelector(".editor_modale").remove();//suppr tt
+        document.querySelector(".editor_modale").style.visibility = "hidden";
+        // ajoutDomEditor()
     });
     const editeur = document.querySelector(".modale");
     editeur.insertAdjacentElement("afterbegin", xmark)
