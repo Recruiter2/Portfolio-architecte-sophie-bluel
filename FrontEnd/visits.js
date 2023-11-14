@@ -118,7 +118,8 @@ function ajoutLogOut(){
 
 
 }
-function ajoutDomEditor (){
+function ajoutDomEditor(){
+    //add envent listener and button to show the modale editor
     const titleH2 = document.querySelector(".three");
     const link = document.querySelector(".three");
     const modifier = document.createElement("a");
