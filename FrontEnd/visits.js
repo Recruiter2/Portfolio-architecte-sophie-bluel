@@ -1,3 +1,4 @@
+
 // Récupération des visites depuis le fichier JSON
 const reponse = await fetch('http://localhost:5678/api/works');
 let visits = await reponse.json()
