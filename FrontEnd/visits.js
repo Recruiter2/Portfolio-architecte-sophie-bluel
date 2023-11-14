@@ -134,7 +134,6 @@ function ajoutDomEditor(){
 
         }
         });
-    // modifier.href = ""
     let editorSquare =  document.createElement("i");
     editorSquare.classList.add('fa-regular', 'fa-pen-to-square');
         // "< i className = \"fa-regular fa-pen-to-square\" > < /i>";
