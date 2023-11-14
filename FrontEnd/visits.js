@@ -295,7 +295,10 @@ function genererForm(){
     const lCategorie = document.createElement("label");
     lCategorie.innerHTML = "Categorie";
 
-    const cInput = document.createElement("input")
+    const cInput = document.createElement("select")
+    cInput.classList.add("upload")
+
+    categoriesForm(cInput)
     cInput.name = "categorie"
     cInput.type = "integer"
 
