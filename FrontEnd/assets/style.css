@@ -63,14 +63,15 @@ body {
 }
 
 .modale {
-  width: 35.5rem;
-  height: 39rem;
+  width: 39.4rem;
+  min-height: 43rem;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #FFFEF8;
+  background: white;
   opacity: 100%;
+  border-radius: 0.6rem;
 }
 .modale button {
   font-family: "Syne";
@@ -78,27 +79,30 @@ body {
   border: 2px solid #1D6154;
   background: #1D6154;
   height: 2.5rem;
-  min-width: 7rem;
+  min-width: 16rem;
   width: fit-content;
   color: #ffffff;
-  margin-bottom: 1.5rem;
-  margin-top: 2rem;
+  margin-bottom: 3.5rem;
   padding: 0 0.7rem 0 0.7rem;
   font-weight: bold;
   font-size: 1rem;
+}
+.modale .disabled {
+  background: #B3B3B3;
+  border: none;
 }
 .modale .imgs {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 71%;
+  max-width: 67.5%;
   gap: 1.5rem 0.6rem;
 }
 .modale figure {
   position: relative;
 }
 .modale figure img {
-  width: 4.5rem;
+  width: 4.8rem;
   object-fit: cover;
 }
 .modale figure .fa-trash-can {
@@ -113,13 +117,110 @@ body {
   border-radius: 0.2rem;
 }
 .modale .br {
-  width: 10rem;
-  border: 1px solid #dee2e6;
+  width: 27rem;
+  background: #B3B3B3;
+  height: 1px;
+  margin: 2.5rem 0;
+}
+.modale #modaleRetourArriere {
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.1rem;
+  margin: 1.5rem 2rem;
+}
+
+#container_form > * {
+  text-align: center;
+}
+#container_form h2 {
+  margin-bottom: 20px;
+}
+#container_form form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+#container_form form input[type=file] {
+  width: 1px;
+  visibility: hidden;
+  display: none;
+}
+#container_form form input[type=button] {
+  width: 100%;
+}
+#container_form form #inputUploadField {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 11rem;
+  background: #E8F1F6;
+}
+#container_form form #inputUploadField .fa-image {
+  font-size: 4.5rem;
+  color: #B9C5CC;
+}
+#container_form form #inputUploadField img {
+  object-fit: cover;
+  max-height: 11rem;
+  max-width: 100%;
+}
+#container_form form #inputUploadField input[type=button] {
+  max-width: 45%;
+  padding: 0 2rem;
+  border-radius: 1.25rem;
+  height: 2.5rem;
+  color: #306685;
+  background: #B9C5CC;
+}
+#container_form form #inputUploadField p {
+  color: #444444;
+}
+#container_form form #cofirmerUploadForm {
+  margin: 0 auto;
+}
+#container_form input, #container_form select {
+  background: white;
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#container_form select {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  background-image: url("/assets/angle-down-solid.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 0.65em auto;
+  background-origin: content-box;
+  padding-right: 1rem;
+}
+#container_form .select:after {
+  content: "\f0da";
+  float: right;
+  border: none;
+  font-family: "FontAwesome";
+}
+#container_form label {
+  font-size: 1rem;
+  margin: 2em 0 1em 0;
+}
+#container_form textarea {
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 h3 {
-  margin-top: 3rem;
   text-align: center;
+  font-size: 1.6rem;
+  font-family: Work Sans, serif;
+  margin-top: 3.5rem;
+  margin-bottom: 2.4rem;
 }
 
 .fa-xmark {
@@ -127,6 +228,7 @@ h3 {
   position: absolute;
   top: 0;
   right: 0;
+  font-size: 1.1rem;
   margin: 1.5rem 2rem;
 }
 
