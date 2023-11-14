@@ -167,8 +167,7 @@ function afficherModale(){
     afficherTitre()
     const photosContainer = document.createElement("div");
     photosContainer.classList.add('photos');
-
-    afficherGallery(visits)
+    afficherGalleryInsideModale(visits)
 }
 
 
