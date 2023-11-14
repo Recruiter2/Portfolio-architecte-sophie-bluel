@@ -428,28 +428,32 @@ function ajoutListenerUpload() {
 }
 
 
-function delPhoto(visitElement, id){
-    //ajout btn suppr foreach img
-    const basket = document.createElement("i");
-    basket.classList.add('fa-solid', 'fa-trash-can');
+async function categoriesForm(cInput){ //function used for debug wrong it's used for getting categories from api
+    const reponse = await fetch("http://localhost:5678/api/categories", {
+        method: "GET",
+        headers: {
+            accept: 'application/json'
+           },
+    });
+    // const valeurReponse = JSON.stringify(reponse);
+    categories = await reponse.json();
+    console.log(categories)
+    addCategoriesForm(cInput, categories)
+}
 
+function addCategoriesForm(cInput, categories){
+    const categori = document.createElement("option");
+    categori.value= ""
+    cInput.appendChild(categori);
+    categories.forEach((category) => {
 
-    visitElement.appendChild(basket)
-    basket.addEventListener("click", async function () {
-        visitElement.remove();//suppr img
-        // const user_input = {
-        //     Authorization:  loggedIn
-        // };
-        // fetch('http://localhost:5678/api/', {
-        //     method: "POST",
-        //     headers: {Authorization: 'Bearer' + loggedIn }
-        // })
-        fetch('http://localhost:5678/api/works/' + id, {
-            headers: {
-                Authorization: 'Bearer ' + loggedIn },
-            method: 'DELETE'
-        })
-        // const avis = await reponse.json();
+        // Création d’une balise dédiée à une categorie
+        const categori = document.createElement("option");
+        categori.value = category.id;
+        categori.innerText = category.name;
+
+        // On rattache la balise option a la section select
+        cInput.appendChild(categori);
     });
 
 }
