@@ -101,6 +101,7 @@ if (loggedIn === null){
 }else if (loggedIn != null){
     ajoutLogOut()
     ajoutDomEditor()
+    ajoutDomBand()
     // console.log("1erreur_verif_loggedin", loggedIn)
 }else  {
     // console.log("2erreur_verif_loggedin", loggedIn.token)
