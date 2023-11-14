@@ -306,8 +306,12 @@ function genererForm(){
     const modifier = document.createElement("div");
     modifier.classList.add('br');
     form.appendChild(modifier)
-    const valider = document.createElement("input")
-    valider.type = "submit"
+    let valider = document.createElement("button")
+    valider.type = "button"
+    valider.id = "cofirmerUploadForm"
+    valider.innerHTML = "Valider"
+    valider.disabled = true
+    valider.classList.add('disabled')
     valider.value = "Valider"
     form.appendChild(valider)
 
