@@ -300,7 +300,6 @@ function genererForm(){
 
     categoriesForm(cInput)
     cInput.name = "categorie"
-    cInput.type = "integer"
 
     form.appendChild(lCategorie)
     form.appendChild(cInput)
