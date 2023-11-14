@@ -156,7 +156,6 @@ function afficherEditeur(){
     const body = document.querySelector("body");
     body.insertAdjacentElement("afterbegin", modifier)
     afficherModale()
-
 }
 
 function afficherModale(){
