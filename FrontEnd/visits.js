@@ -349,17 +349,20 @@ function uploadField(form) {
 
 }
 
-function ajoutListenerUpload(form) {
-    form.addEventListener("submit", async function (event) {
+function ajoutListenerUpload() {
+
+    // ajouter le id
+    let cofirmerUploadForm = document.getElementById("cofirmerUploadForm")
+    // console.log(cofirmerUploadForm)
+    cofirmerUploadForm.addEventListener("click", async function (event) {
         console.log('event listener was triggered')
-        // rm_tag();
+
         event.preventDefault();
-        // Création de l’objet du nouvel user.
 
-
-        const title = event.target.querySelector("[name=titre]").value
-        const category = event.target.querySelector("[name=categorie]").value
-        const image = event.target.querySelector("[name=image]").files[0]
+        const uploadFormVisit = document.getElementById("uploadPhotoCategory")
+        const title = uploadFormVisit.querySelector("[name=titre]").value
+        const category = uploadFormVisit.querySelector("[name=categorie]").value
+        const image = uploadFormVisit.querySelector("[name=image]").files[0]
         const visitData = new FormData();
         visitData.append("title", title);
         visitData.append("category", category); // le numéro 123456 est converti immédiatement en chaîne "123456"
