@@ -34,6 +34,23 @@ body {
   background: #FFFEF8;
 }
 
+.push_body {
+  margin-top: 3.2rem;
+}
+
+.edit_banner {
+  background: black;
+  height: 3.2rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  color: white;
+}
+.edit_banner > .center {
+  gap: 0.6rem;
+}
+
 .editor_modale {
   display: flex;
   align-items: center;
