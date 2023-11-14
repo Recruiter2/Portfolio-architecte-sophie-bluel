@@ -377,10 +377,8 @@ function ajoutListenerUpload() {
             headers: {
                 'accept': 'application/json',
                 Authorization: 'Bearer ' + loggedIn
-                // "Content-Type": "multipart/form-data"
                 },
             body: visitData
-
 
         });
         // console.log(reponse, visitData)
