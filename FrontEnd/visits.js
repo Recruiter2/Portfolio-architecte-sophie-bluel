@@ -277,6 +277,7 @@ function afficherButtonAjouter(){
 }
 
 function genererForm(){
+    // console.log("generer form active")
     const form = document.createElement("form"); //bouton upload img
     const container =document.querySelector(".imgs")
     container.id = "concact";
