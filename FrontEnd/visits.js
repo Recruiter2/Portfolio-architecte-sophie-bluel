@@ -475,6 +475,19 @@ function showPreviewUploadedPhoto(){
     }
 }
 
+function ajouterModaleBtnRetour(){
+    const modale = document.querySelector('.modale');
+    const retour = document.createElement("i");
+    retour.id = 'modaleRetourArriere'
+    retour.classList.add('fa-solid', 'fa-arrow-left')
+    retour.addEventListener("click", function () {
+        document.querySelector('.editor_modale').remove()
+        const click = document.querySelector('.three a');
+        click.click();
+
+    });
+    modale.appendChild(retour)
+    checkIfInputEmpty()
 }
 
 
