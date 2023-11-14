@@ -107,14 +107,12 @@ if (loggedIn === null){
     console.log("an error occured w login process")
 
 }
-function ajoutLogOut (){
+function ajoutLogOut(){
     let logIn =  document.querySelector("#login");
     logIn.href = ""
-    logIn.innerHTML = "LogOut"
+    logIn.innerHTML = "logout"
     logIn.addEventListener("click", function () {
         window.localStorage.removeItem('token');
-        // delete(loggedIn)
-        // loggedIn = null;
         window.location = ".";
     });
 
