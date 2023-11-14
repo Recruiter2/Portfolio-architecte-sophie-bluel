@@ -264,7 +264,7 @@ function afficherButtonAjouter(){
     const modifier = document.createElement("button");
     modifier.classList.add('ajouter');
     modifier.innerHTML = "Ajouter une photo";
-    modifier.addEventListener("click", async function () {
+    modifier.addEventListener("click",  function () {
         document.querySelector(".title_h3").innerHTML = "Ajout photo";
         document.querySelector(".imgs").innerHTML = "";
         modifier.remove()
