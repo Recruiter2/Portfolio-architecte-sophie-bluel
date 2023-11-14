@@ -64,40 +64,45 @@
 }
 
 .modale {
-  width: 35.5rem;
-  height: 39rem;
+  width: 39.4rem;
+  min-height: 43rem;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #FFFEF8;
+  background: white;
   opacity: 100%;
+  border-radius: 0.6rem;
   button {
     font-family: "Syne";
     border-radius: 25px;
     border: 2px solid #1D6154;
     background: #1D6154;
     height: 2.5rem;
-    min-width: 7rem;
+    min-width: 16rem;
     width: fit-content;
     color: #ffffff;
-    margin-bottom: 1.5rem;
-    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    //margin-top: 2rem;
     padding: 0 0.7rem 0 0.7rem;
     font-weight: bold;
     font-size: 1rem;
+  }
+  .disabled {
+    background: #B3B3B3;
+    border: none;
   }
   .imgs {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 71%;
+    max-width: 67.5%;
     gap: 1.5rem 0.6rem ;
   }
   figure {
     position: relative;
     img {
-      width: 4.5rem;
+      width: 4.8rem;
       object-fit: cover;
     }
     .fa-trash-can {
@@ -114,14 +119,122 @@
   }
 
   .br {
-    width: 10rem;
-    border: 1px solid #dee2e6;
+    width: 27rem;
+    //border: 0.5px solid #B3B3B3;
+    background: #B3B3B3;
+    height: 1px;
+    margin: 2.5rem 0;
+  }
+  #modaleRetourArriere {
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.1rem;
+    margin: 1.5rem 2rem;
   }
 }
 
+#container_form {
+  //margin: auto;
+  > * {
+    text-align: center;
+
+  }
+  h2{
+    margin-bottom: 20px;
+  }
+  form {
+    text-align: left;
+    //margin-top:30px;
+    display: flex;
+    flex-direction: column;
+    input[type=file] {
+      width: 1px;
+      visibility: hidden;
+      display: none;
+    }
+    input[type=button] {
+      width: 100%;
+    }
+
+    #inputUploadField {
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 11rem;
+      background: #E8F1F6;
+      .fa-image {
+        font-size: 4.5rem;
+        color: #B9C5CC;
+      }
+      img {
+        object-fit: cover;
+        max-height: 11rem;
+        max-width: 100%;
+      }
+      input[type=button] {
+        max-width: 45%;
+        padding: 0 2rem;
+        border-radius: 1.25rem;
+        height: 2.5rem;
+        color: #306685;
+        background: #B9C5CC;
+      }
+      p {
+        color: #444444;
+      }
+
+    }
+
+    #cofirmerUploadForm {
+      margin: 0 auto;
+    }
+  }
+
+  input, select {
+    background: white;
+    height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  }
+  select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+      background-image: url("/assets/angle-down-solid.svg");
+    background-repeat: no-repeat;
+    background-position: right ;
+    background-size: .65em auto;
+    background-origin: content-box;
+    padding-right: 1rem;
+  }
+  .select:after {
+    content: "\f0da";
+    float: right;
+    border: none;
+    font-family: 'FontAwesome';
+  }
+  label {
+    font-size: 1rem;
+    margin: 2em 0 1em 0;
+  }
+  textarea {
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  }
+}
 h3 {
-  margin-top: 3rem;
+  //margin: 3rem 0;
   text-align: center;
+  font-size: 1.6rem;
+  font-family: Work Sans, serif;
+  //margin: 3rem 0;
+  margin-top: 3.5rem;
+  margin-bottom: 2.4rem;
 
 }
 
@@ -130,6 +243,8 @@ h3 {
   position: absolute;
   top:0;
   right:0;
+  font-size: 1.1rem;
+
   margin: 1.5rem 2rem;
 }
 
