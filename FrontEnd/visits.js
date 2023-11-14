@@ -123,7 +123,7 @@ function ajoutDomEditor(){
     const titleH2 = document.querySelector(".three");
     const link = document.querySelector(".three");
     const modifier = document.createElement("a");
-    modifier.innerText = " modifier";
+    modifier.innerText = "modifier";
     modifier.addEventListener("click", function () {
         // console.log(document.querySelector(".modale"));
         if (document.querySelector(".editor_modale") === null){
