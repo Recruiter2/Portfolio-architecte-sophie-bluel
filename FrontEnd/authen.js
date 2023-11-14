@@ -74,7 +74,8 @@ ajoutListenerConnexion();
 
 function ajoutDomErorPw(){
     const mailError = document.querySelector("#password");
-    const msg = document.createElement("p");
+    const msg = document.createElement("p"); //ajouter class erreur
+    msg.classList.add('erreur_login')
     msg.innerText = "Mot de passe incorrect";
     mailError.insertAdjacentElement("afterEnd", msg)
 
@@ -82,7 +83,8 @@ function ajoutDomErorPw(){
 
 function ajoutDomErorMail(){
     const passwordError = document.querySelector("#mail");
-    const msg = document.createElement("p");
+    const msg = document.createElement("p"); //ajouter class erreur
+    msg.classList.add('erreur_login')
     msg.innerText = "Email incorrect";
     passwordError.insertAdjacentElement("afterEnd", msg)
 
@@ -90,7 +92,7 @@ function ajoutDomErorMail(){
 
 function rm_tag(){
     //cette fº enleve les p av msg err
-    let Error = document.querySelector("p");
+    let Error = document.querySelector(".erreur_login");
     if (Error) {
         Error.remove();
     }
