@@ -491,6 +491,45 @@ function ajouterModaleBtnRetour(){
 }
 
 
+function checkIfInputEmpty(){ //check IfI nput Empty in all input fields
+    // document.getElementById("myPhoto").onchange = function (){
+    //     // you have a file
+    //     console.log('filled inputs')
+    // }
+
+    // Get fields by className
+    let fields = document.getElementsByClassName("upload") //validated-field
+
+// Array.from will convert the HTMLCollection to Native Array.
+    if (Array.from(fields).length > 0) {
+        // Loop
+        Array.from(fields).forEach(field => {
+            // Add Event for each field.
+            field.addEventListener("input", function(e) {
+                console.log(e.target.value)
+                if (!e.target.value) {
+                    buttonInvalid()
+                    // e.target.classList.add("not-valid")
+                } else {
+                    buttonValid()
+                    // e.target.classList.remove("not-valid")
+                }
+            })
+        })
+    }
+}
+
+function buttonValid() {
+    let mybutton = document.getElementById('cofirmerUploadForm')
+    mybutton.disabled = false
+    mybutton.classList.remove("disabled")
+}
+
+function buttonInvalid() {
+    let mybutton = document.getElementById('cofirmerUploadForm')
+    mybutton.disabled = true
+    mybutton.classList.add("disabled")
+}
 
 function cleck(){ //function used for debug
     let link = document.querySelector('.three a');
