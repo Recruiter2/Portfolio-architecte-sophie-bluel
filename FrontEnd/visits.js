@@ -313,15 +313,9 @@ function genererForm(){
     valider.disabled = true
     valider.classList.add('disabled')
     valider.value = "Valider"
+    console.log('l311 button valider test', valider)
     form.appendChild(valider)
 
-    // modifier.classList.add('modale');
-    // modifier.addEventListener("click", async function () {
-    //     document.querySelector(".gallery").innerHTML = "";
-    //     genererVisits(visits);
-    // });
-    // const editeur = document.querySelector("br");
-    // editeur.insertAdjacentElement("afterend", modifier)
 }
 
 function uploadField(form) {
