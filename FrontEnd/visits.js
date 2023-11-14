@@ -315,6 +315,7 @@ function genererForm(){
     valider.value = "Valider"
     console.log('l311 button valider test', valider)
     form.appendChild(valider)
+    ajoutListenerUpload()
 
 }
 
