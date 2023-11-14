@@ -144,6 +144,12 @@ function ajoutDomEditor(){
     modifier.insertAdjacentElement("afterbegin", editorSquare)
 
 }
+function ajoutDomBand(){
+    const body = document.querySelector("body");
+    body.classList.add('push_body');
+    const banner = document.querySelector(".edit_banner");
+    banner.style.display = '';
+}
 function afficherEditeur(){
     const modifier = document.createElement("div");
     modifier.classList.add('editor_modale');
