@@ -180,9 +180,8 @@ function afficherTitre(){
     editeur.insertAdjacentElement("afterend", modifier)
 }
 
-function afficherBoutonX(){
-    //X bouton fermer modale X
-    console.log('x')
+ function afficherBoutonX(){
+    //    console.log( 'X bouton fermer modale X was added x')
     const xmark = document.createElement("i");
     xmark.classList.add('fa-solid', 'fa-xmark');
 
