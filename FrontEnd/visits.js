@@ -536,18 +536,29 @@ let whichInput = ""
         Array.from(fields).forEach((field, index ) => {
             // Add Event for each field.
             field.addEventListener("input", function(e) {
-                let myValue = e.target.value
-                // console.log(field)
+                let test = document.getElementById(index.toString())
+                let isValid = false
+
                 if (!e.target.value) {
                     console.log("first if of input check reached (invalid)")
                     buttonInvalid()
-                    nbInputFields += 1
+                    whichInput = field.name
                     showErrorEmpty(field)
-                    // e.target.classList.add("not-valid")
+                    test.classList.add("not-valid")
+                    field.classList.remove("valid")
+
+                    isValid = false
+                    compteNbFieldOk( nbInputFields, isValid)
+
                 } else {
-                    console.log(nbInputFields)
-                    compteNbFieldOk("nbInputFields 2 :", nbInputFields)
-                    // e.target.classList.remove("not-valid")
+                    isValid = true
+                    test.classList.remove("not-valid")
+                    field.classList.add("valid")
+
+                    // console.log("compteNbFieldOk(counter, nbInputFields, isValid) :", counter, nbInputFields, isValid)
+                    compteNbFieldOk( nbInputFields, isValid)
+                    compteNbClassValid(nbInputFields)
+
                 }
             })
         })
