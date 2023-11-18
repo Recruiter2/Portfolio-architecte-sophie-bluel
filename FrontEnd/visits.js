@@ -519,6 +519,9 @@ function ajouterModaleBtnRetour(){
     checkIfInputEmpty()
 }
 
+let counter = 0
+let whichInput = ""
+// let previousBool = true
 
 function checkIfInputEmpty(){ //check IfI nput Empty in all input fields
     // document.getElementById("myPhoto").onchange = function (){
