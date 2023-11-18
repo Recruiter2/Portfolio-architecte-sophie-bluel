@@ -611,7 +611,7 @@ function buttonInvalid() {
 
 function buttonValid() {
     let mybutton = document.getElementById('cofirmerUploadForm')
-    mybutton.disabled = false
+    mybutton.disabled = false;
     mybutton.classList.remove("disabled")
 
 }
