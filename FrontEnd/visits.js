@@ -616,6 +616,17 @@ function buttonValid() {
 
 }
 
+function compteNbClassValid(nbInputFields) {
+    let validClasses= document.getElementsByClassName("valid")
+    let nbClassValid = Array.from(validClasses).length
+    console.log("NbClassValid nbInputFields : ", nbClassValid, nbInputFields)
+    if (nbInputFields === nbClassValid) {
+        let mybutton = document.getElementById('cofirmerUploadForm')
+        mybutton.disabled = false;
+        mybutton.classList.remove("disabled")
+    }
+}
+
 
 function addHitBoxLitener(){
 let myButtonHitBox = document.getElementById('error_hit_box')
