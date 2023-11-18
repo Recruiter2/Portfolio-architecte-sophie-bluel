@@ -672,4 +672,4 @@ function cleck(){ //function used for debug
      link2.click();
 
 }
-cleck()
+ // cleck()
