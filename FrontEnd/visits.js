@@ -533,7 +533,7 @@ let whichInput = ""
     let nbInputFields = Array.from(fields).length
     if (nbInputFields > 0) {
         // Loop
-        Array.from(fields).forEach(field => {
+        Array.from(fields).forEach((field, index ) => {
             // Add Event for each field.
             field.addEventListener("input", function(e) {
                 let myValue = e.target.value
