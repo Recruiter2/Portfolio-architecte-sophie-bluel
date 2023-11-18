@@ -119,7 +119,7 @@ body {
 .modale .br {
   width: 27rem;
   background: #B3B3B3;
-  height: 1px;
+  height: 1.25px;
   margin: 2.5rem 0;
 }
 .modale #modaleRetourArriere {
@@ -139,6 +139,7 @@ body {
 }
 #container_form form {
   text-align: left;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -178,6 +179,17 @@ body {
 }
 #container_form form #inputUploadField p {
   color: #444444;
+}
+#container_form form #error_hit_box {
+  width: fit-content;
+  margin: 0 auto;
+}
+#container_form form .erreurInputVide {
+  color: red;
+  visibility: collapse;
+}
+#container_form form .not-valid {
+  visibility: visible;
 }
 #container_form form #cofirmerUploadForm {
   margin: 0 auto;
