@@ -350,6 +350,8 @@ function uploadField(form) {
     const imgIcon = document.createElement("i"); //ajout icone img
     imgIcon.classList.add('fa-regular', 'fa-image');
     const uploadPhoto = document.createElement("input"); //bouton upload img
+    addErrorFieldForm (uploadPhoto)
+
     uploadPhoto.classList.add('upload');
     uploadPhoto.type = 'file'
     uploadPhoto.name = 'image'
@@ -367,6 +369,8 @@ function uploadField(form) {
 
     container.appendChild(buttonUpload)
     form.appendChild(container)
+    addErrorFieldForm (form, "image", 0)
+
     showPreviewUploadedPhoto()
     const imgTypesAccept = document.createElement("p"); //bouton upload img
     imgTypesAccept.innerHTML = "jpg, png: 4mo max";
