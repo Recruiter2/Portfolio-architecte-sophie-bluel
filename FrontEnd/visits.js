@@ -540,7 +540,6 @@ let whichInput = ""
                 // console.log(field)
                 if (!e.target.value) {
                     console.log("first if of input check reached (invalid)")
-                    console.log("nbInputFields 1 :", nbInputFields)
                     buttonInvalid()
                     nbInputFields += 1
                     showErrorEmpty(field)
