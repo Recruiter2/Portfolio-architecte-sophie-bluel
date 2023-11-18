@@ -327,6 +327,8 @@ function genererForm(){
     const modifier = document.createElement("div");
     modifier.classList.add('br');
     form.appendChild(modifier)
+    let containerButton = document.createElement("div"); //error_hit_box
+    containerButton.id = "error_hit_box"
     let valider = document.createElement("button")
     valider.type = "button"
     valider.id = "cofirmerUploadForm"
@@ -335,8 +337,10 @@ function genererForm(){
     valider.classList.add('disabled')
     valider.value = "Valider"
     console.log('l311 button valider test', valider)
-    form.appendChild(valider)
+    containerButton.appendChild(valider)
+    form.appendChild(containerButton)
     ajoutListenerUpload()
+    addHitBoxLitener()
 
 }
 
@@ -570,6 +574,35 @@ function buttonValid() {
 }
 
 
+function addHitBoxLitener(){
+let myButtonHitBox = document.getElementById('error_hit_box')
+console.log(myButtonHitBox)
+    myButtonHitBox.addEventListener("click", function () {
+    console.log("showErrorEmpty field was triggered onclick")
+    let fields = document.getElementsByClassName("upload") //validated-field
+    let nbInputFields = Array.from(fields).length
+    console.log("nbInputFields 3 :", nbInputFields)
+        if (nbInputFields > 0) {
+            // Loop
+            Array.from(fields).forEach((field, index )=> {
+                    if (!field.value) {
+                        console.log("first if of input check reached (invalid)")
+                        let test = document.getElementById(index.toString())
+                        console.log(test)
+                        test.classList.add("not-valid")
+                    } else {
+
+                    }
+            })
+        }
+    });
+    // document.getElementById('error_hit_box').addEventListener('click', function(event) {
+    //     if (event.target.tagName === 'DIV') {
+    //         alert('Div clicked!');
+    //         // Other actions or code logic can be added here
+    //     }
+    // });
+}
 function showErrorEmpty(field) {
     console.log("showErrorEmpty field was triggered")
     let erreur = document.createElement("p");
