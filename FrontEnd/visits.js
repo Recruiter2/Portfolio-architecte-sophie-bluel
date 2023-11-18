@@ -276,6 +276,20 @@ function afficherButtonAjouter(){
     editeur.insertAdjacentElement("beforeend", modifier)
 }
 
+function insertAfter(referenceNode, newNode) {
+    referenceNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+function addErrorFieldForm (field, input, id){
+    //here field is actually form but error must be added after input so it's called field
+    let erreur = document.createElement("p");
+    erreur.classList.add("erreurInputVide")
+    erreur.id = id
+    erreur.innerHTML = "Veuillez ajouter l'element : " + input
+      field.appendChild(erreur)
+    // insertAfter(field, erreur)
+    // field.insertAdjacentElement('afterbegin', erreur)
+}
 function genererForm(){
     // console.log("generer form active")
     const form = document.createElement("form"); //bouton upload img
