@@ -309,6 +309,8 @@ function genererForm(){
     tInput.type = "text"
     form.appendChild(lTitre)
     form.appendChild(tInput)
+    addErrorFieldForm (form, "titre", 1)
+
     const lCategorie = document.createElement("label");
     lCategorie.innerHTML = "Categorie";
 
@@ -320,6 +322,8 @@ function genererForm(){
 
     form.appendChild(lCategorie)
     form.appendChild(cInput)
+    addErrorFieldForm (form, "categorie", 2)
+
     const modifier = document.createElement("div");
     modifier.classList.add('br');
     form.appendChild(modifier)
