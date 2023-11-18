@@ -560,6 +560,11 @@ let whichInput = ""
                     compteNbClassValid(nbInputFields)
 
                 }
+                // let counter = document.querySelector(".not-valid")
+
+                 // console.log("compteur 561 compteNbFieldOk counter :", counter)
+                return counter
+
             })
         })
     }
