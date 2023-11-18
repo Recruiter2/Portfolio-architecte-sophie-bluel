@@ -659,13 +659,8 @@ console.log(myButtonHitBox)
 }
 function showErrorEmpty(field) {
     console.log("showErrorEmpty field was triggered")
-    let erreur = document.createElement("p");
-    erreur.classList.add("erreur input vide")
-    erreur.innerHTML = "Veuillez ajouter l'element : " + field.name
-    let mybutton = document.getElementById('cofirmerUploadForm')
-    mybutton.addEventListener("click", function () {
-        field.insertAdjacentElement("beforeend", erreur) //on ajoute l'erreur a cote donc en dessou
-    });
+
+
 //    default
 }
 
