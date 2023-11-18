@@ -569,15 +569,39 @@ let whichInput = ""
         })
     }
 }
+let previousBool = true
 
-function compteNbFieldOk(nbInputFields) {
-    // compteur :
-    nbInputFields -= 1
-    if (0 === nbInputFields) {
+function compteNbFieldOk( nbInputFields, isValid ) {
+
+    if (isValid ) {
+        if (previousState(isValid, previousBool)){
+            previousBool = false
+            counter += 1
+            console.log("entered compteNbFieldOk counter shoul +1 counter: ", counter)
+        }
+
+
+    }
+    else if (previousState(isValid, previousBool)) {
+        counter -= 1
+        previousBool = true
+    }
+    // console.log("compteur 581 compteNbFieldOk counter :", counter)
+
+    if (counter === nbInputFields) {
         buttonValid()
     }
+    else {
+        buttonInvalid()
+    }
+    // return counter
 }
 
+function previousState(s1, s2) {
+    //this function check if previous state is different
+    // console.log("s1,s2 :",s1,s2)
+    return s1 === s2
+}
 function buttonInvalid() {
     let mybutton = document.getElementById('cofirmerUploadForm')
     mybutton.disabled = true
