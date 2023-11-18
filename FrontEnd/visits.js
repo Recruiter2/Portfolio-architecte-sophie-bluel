@@ -523,11 +523,8 @@ let counter = 0
 let whichInput = ""
 // let previousBool = true
 
-function checkIfInputEmpty(){ //check IfI nput Empty in all input fields
-    // document.getElementById("myPhoto").onchange = function (){
-    //     // you have a file
-    //     console.log('filled inputs')
-    // }
+    function checkIfInputEmpty(){ //check If Input Empty in all input fields
+
 
     // Get fields by className
     let fields = document.getElementsByClassName("upload") //validated-field
