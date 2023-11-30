@@ -50,12 +50,6 @@ export function ajoutListenerConnexion() {
 ajoutListenerConnexion();
 
 
-function ajoutDomErorPw(){
-    const mailError = document.querySelector("#password");
-    const msg = document.createElement("p"); //ajouter class erreur
-    msg.classList.add('erreur_login')
-    msg.innerText = "Mot de passe incorrect";
-    mailError.insertAdjacentElement("afterEnd", msg)
 
 }
 
