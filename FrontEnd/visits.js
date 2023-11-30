@@ -56,6 +56,9 @@ visitShowAll.classList.add("green")  //add green class on load so the button is 
 sectionFiches.appendChild(visitShowAll).addEventListener("click", function () {
     document.querySelector(".gallery").innerHTML = "";
     genererVisits(visits);
+    //on click rm all green and add ot current button green class
+    rm_buttonColorGreen()
+    visitShowAll.classList.add("green")
 });
 
 
