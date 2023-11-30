@@ -180,8 +180,7 @@ function afficherTitre(){
     xmark.classList.add('fa-solid', 'fa-xmark');
 
     xmark.addEventListener("click", async function () {
-        await recupFichierVisitsApi(reponse, visits)
-        // document.querySelector(".editor_modale").remove();//suppr tt
+        await recupFichierVisitsApi()
         document.querySelector(".editor_modale").style.visibility = "hidden";
     });
     const editeur = document.querySelector(".modale");
@@ -405,7 +404,7 @@ function ajoutListenerUpload() {
 
                 genererVisits(visits);
                 break;
-           
+
         }
     });
 
@@ -572,19 +571,14 @@ function compteNbClassValid(nbInputFields) {
 
 function addHitBoxLitener(){
 let myButtonHitBox = document.getElementById('error_hit_box')
-console.log(myButtonHitBox)
     myButtonHitBox.addEventListener("click", function () {
-    console.log("showErrorEmpty field was triggered onclick")
     let fields = document.getElementsByClassName("upload") //validated-field
     let nbInputFields = Array.from(fields).length
-    console.log("nbInputFields 3 :", nbInputFields)
         if (nbInputFields > 0) {
             // Loop
             Array.from(fields).forEach((field, index )=> {
                     if (!field.value) {
-                        console.log("first if of input check reached (invalid)")
                         let test = document.getElementById(index.toString())
-                        console.log(test)
                         test.classList.add("not-valid")
                     } else {
 
@@ -592,15 +586,6 @@ console.log(myButtonHitBox)
             })
         }
     });
-    // document.getElementById('error_hit_box').addEventListener('click', function(event) {
-    //     if (event.target.tagName === 'DIV') {
-    //         alert('Div clicked!');
-    //         // Other actions or code logic can be added here
-    //     }
-    // });
-}
-function showErrorEmpty(field) {
-    console.log("showErrorEmpty field was triggered")
 
 
 //    default
@@ -608,10 +593,8 @@ function showErrorEmpty(field) {
 
 function cleck(){ //function used for debug
     const link = document.querySelector('.three a');
-    // for(var i = 0; i < 50; i++)
         link.click();
     const link2 = document.querySelector('.ajouter');
      link2.click();
 
 }
- // cleck()
