@@ -175,7 +175,7 @@ function afficherTitre(){
 }
 
  function afficherBoutonX(){
-    //    console.log( 'X bouton fermer modale X was added x')
+    //    X bouton fermer modale X was added x
     const xmark = document.createElement("i");
     xmark.classList.add('fa-solid', 'fa-xmark');
 
