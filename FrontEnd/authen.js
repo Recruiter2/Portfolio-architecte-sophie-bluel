@@ -51,7 +51,6 @@ ajoutListenerConnexion();
 
 
 
-}
 
 function ajoutDomErorMail(){
     const passwordError = document.querySelector("#mail");
