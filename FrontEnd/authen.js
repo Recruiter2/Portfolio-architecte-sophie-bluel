@@ -56,7 +56,7 @@ function ajoutDomErorMail(){
     const passwordError = document.querySelector("#mail");
     const msg = document.createElement("p"); //ajouter class erreur
     msg.classList.add('erreur_login')
-    msg.innerText = "Email incorrect";
+    msg.innerText = "Email ou mot de passe incorrect";
     passwordError.insertAdjacentElement("afterEnd", msg)
 
 }
