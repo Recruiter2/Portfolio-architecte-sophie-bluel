@@ -34,7 +34,7 @@ export function ajoutListenerConnexion() {
                 
                 break;
             case 401:
-                ajoutDomErorPw();
+                ajoutDomErorMail();
                 break;
             case 404:
                 ajoutDomErorMail();
