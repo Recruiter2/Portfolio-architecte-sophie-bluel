@@ -588,9 +588,8 @@ let myButtonHitBox = document.getElementById('error_hit_box')
         }
     });
 
-
-//    default
 }
+
 
 function cleck(){ //function used for debug
     const link = document.querySelector('.three a');
