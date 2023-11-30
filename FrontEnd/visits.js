@@ -9,9 +9,9 @@ async function recupFichierVisitsApi() {
     //function used to refresh data during upload CANNOT BE DELETED
     // Récupération des visites depuis l'api
     let reponse = await fetch('http://localhost:5678/api/works');
-    let visits = await reponse.json()
+    return  await reponse.json()
 
-    return visits
+
 }
 
 function genererVisits(visits){
