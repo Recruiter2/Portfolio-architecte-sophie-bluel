@@ -467,11 +467,12 @@ h3 {
       padding: 0 0.7rem 0 0.7rem;
       font-weight:bold;
       font-size: 1rem;
-      &:hover, &:active {
-        background:  #1D6154;
-        transition: opacity 400ms;
-        color: white;
-      }
+
+    }
+    .green {
+      background:  #1D6154;
+      transition: opacity 400ms;
+      color: white;
     }
   }
 

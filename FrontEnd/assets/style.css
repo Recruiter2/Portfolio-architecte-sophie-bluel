@@ -444,7 +444,7 @@ li:hover a:hover {
   font-weight: bold;
   font-size: 1rem;
 }
-#visits_filter button:hover, #visits_filter button:active {
+#visits_filter .green {
   background: #1D6154;
   transition: opacity 400ms;
   color: white;
