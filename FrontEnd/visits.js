@@ -411,12 +411,13 @@ function ajoutListenerUpload() {
 }
 
 
-async function categoriesForm(cInput){ //function used for debug wrong it's used for getting categories from api
-    const reponse = await fetch("http://localhost:5678/api/categories", {
+
+async function categoriesForm(cInput){ //function used for debug, wrong it's used for getting categories from api
+    let reponse = await fetch("http://localhost:5678/api/categories", {
         method: "GET",
         headers: {
             accept: 'application/json'
-           },
+        },
     });
     let categories = await reponse.json();
     addCategoriesForm(cInput, categories)
