@@ -63,26 +63,32 @@ sectionFiches.appendChild(visitShowAll).addEventListener("click", function () {
 
 
 
-let categories_name = visits.map(visit => visit.category.name);
-let uniqueCategories_name = new Set(categories_name);
-// console.log(uniqueCategories_name);
+let categoriesResponse = await fetch("http://localhost:5678/api/categories", {
+    method: "GET",
+    headers: {
+        accept: 'application/json'
+    },
+});
+let categories = await categoriesResponse.json();
 
+categories.forEach((category) => {
 
-//on itere sur les cler uniques on cree un bouton par clef et on leur ajoute a chaqu'un un listener
-//le listener une fois enclanche va suppr tt et ajoute uniquement les visites de la categori concerne   amelioration possible .forEach((visit, index) foreach av un index
-for(let i = 0; i < uniqueCategories.size; i++){
     let filterButton = document.createElement("button");
-    filterButton.textContent = Array.from(uniqueCategories_name)[i];
+    filterButton.textContent = category.name;
     filterButton.addEventListener("click", function () {
+        rm_buttonColorGreen()
+        filterButton.classList.add("green")
         const visitsFiltrees = copyArray.filter(function (visit) {
-            return visit.category.id === Array.from(uniqueCategories)[i];
+            return visit.category.id === category.id;
         });
         document.querySelector(".gallery").innerHTML = "";//suppr tt
         genererVisits(visitsFiltrees);
     });
     // On rattache la balise button a la section visits_filter
     sectionFiches.appendChild(filterButton);
-}
+
+});
+
 
 let copyArray = visits.slice(0)
 
