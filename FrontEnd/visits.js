@@ -36,6 +36,14 @@ function genererVisits(visits){
 
 genererVisits(visits);
 
+function rm_buttonColorGreen(){
+    //cette fº enleve les msg err
+    let green = document.querySelector(".green");
+    if (green) {
+        green.classList.remove("green")
+    }
+}
+
 // Récupération de l'élément du DOM qui accueillera les boutons
 const sectionFiches = document.getElementById("visits_filter");
 
