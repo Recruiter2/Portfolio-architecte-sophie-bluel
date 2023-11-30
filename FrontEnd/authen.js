@@ -1,22 +1,4 @@
 //Récupération de rien du tout ancien code  : des avis eventuellement stockées dans le localStorage
-//let user = window.localStorage.getItem('user');
-
-// if (user === null){
-//     //alert vous etes pas connecte -> redirect vers auth ou pas...
-//     // Récupération des idetifiants depuis l'API quand il click connexion
-//     const reponse = await fetch('http://localhost:5678/api/users/login');
-//     console.log("response.status =", reponse.status);
-//     if (reponse.status = 200) {
-//         user = await reponse.json();
-//         // Transformation des pièces en JSON
-//         const valeurUser = JSON.stringify(user);
-//         // Stockage des informations dans le localStorage
-//         window.localStorage.setItem("user", valeurUser);
-//     }
-//
-// }else{
-//     user = JSON.parse(user);
-// }
 
 export function ajoutListenerConnexion() {
     const formulaireConnexion = document.querySelector(".login");
@@ -40,20 +22,16 @@ export function ajoutListenerConnexion() {
         });
         //
 
-        //  console.log("reponse.status =", reponse);
-        // let user = await reponse.clone();
-        // console.log(user)
+
 
         switch (reponse.status) {
             case 200:
                 // Récupération des user depuis l'API
                 let user = await reponse.json();
-                // console.log(user.token)
                 // Stockage des informations dans le localStorage
                 window.localStorage.setItem("token", user.token);
                 window.location = "."
-                // let avis = window.localStorage.getItem('token');
-                // console.log(avis)
+                
                 break;
             case 401:
                 ajoutDomErorPw();
@@ -98,16 +76,3 @@ function rm_tag(){
     }
 }
 
-// console.log("reponse.status =", reponse);
-// if (reponse.status === 200) {
-//     // Récupération des user depuis l'API
-//     let user = await reponse.json();
-//     // Stockage des informations dans le localStorage
-//     window.localStorage.setItem("token", user.token);
-//
-//
-// }
-// let test = window.localStorage.getItem("token");
-//
-//
-// console.log(test);
