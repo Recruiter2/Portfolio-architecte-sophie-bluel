@@ -50,6 +50,7 @@ const sectionFiches = document.getElementById("visits_filter");
 //bouton ajouté
 const visitShowAll = document.createElement("button");
 visitShowAll.textContent = "Tous";
+visitShowAll.classList.add("green")  //add green class on load so the button is selected
 
 // On rattache la balise button a la section visits_filter
 sectionFiches.appendChild(visitShowAll).addEventListener("click", function () {
