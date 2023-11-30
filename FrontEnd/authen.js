@@ -62,7 +62,7 @@ function ajoutDomErorMail(){
 }
 
 function rm_tag(){
-    //cette fº enleve les p av msg err
+    //cette fº enleve les msg err
     let Error = document.querySelector(".erreur_login");
     if (Error) {
         Error.remove();
