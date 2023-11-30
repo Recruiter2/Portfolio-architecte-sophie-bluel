@@ -95,18 +95,14 @@ let copyArray = visits.slice(0)
 
 //mode editeur
 let loggedIn = window.localStorage.getItem('token');
-// console.log("b4", loggedIn)
 
 
 if (loggedIn === null){
-    console.log("pas connecte")
 }else if (loggedIn != null){
     ajoutLogOut()
     ajoutDomEditor()
     ajoutDomBand()
-    // console.log("1erreur_verif_loggedin", loggedIn)
 }else  {
-    console.log("an error occured w login process")
 
 }
 function ajoutLogOut(){
@@ -127,7 +123,6 @@ function ajoutDomEditor(){
     const modifier = document.createElement("a");
     modifier.innerText = "modifier";
     modifier.addEventListener("click", function () {
-        // console.log(document.querySelector(".modale"));
         if (document.querySelector(".editor_modale") === null){
         afficherEditeur();} //cree editeur
         else {
@@ -138,10 +133,8 @@ function ajoutDomEditor(){
         });
     let editorSquare =  document.createElement("i");
     editorSquare.classList.add('fa-regular', 'fa-pen-to-square');
-        // "< i className = \"fa-regular fa-pen-to-square\" > < /i>";
     titleH2.insertAdjacentElement("afterbegin", modifier)
     link.querySelectorAll(":scope > a");
-    // console.log(link)
     modifier.insertAdjacentElement("afterbegin", editorSquare)
 
 }
@@ -174,7 +167,6 @@ function afficherModale(){
 
 
 function afficherTitre(){
-    console.log('t')
     const modifier = document.createElement("h3");
     modifier.classList.add('title_h3');
     modifier.innerHTML = "Gallerie photo"
@@ -191,7 +183,6 @@ function afficherTitre(){
         await recupFichierVisitsApi(reponse, visits)
         // document.querySelector(".editor_modale").remove();//suppr tt
         document.querySelector(".editor_modale").style.visibility = "hidden";
-        // ajoutDomEditor()
     });
     const editeur = document.querySelector(".modale");
     editeur.insertAdjacentElement("afterbegin", xmark)
@@ -214,13 +205,7 @@ function delPhoto(visitElement, id){
                 Authorization: 'Bearer ' + loggedIn },
             method: 'DELETE'
         })
-        // await recupFichierVisitsApi(reponse, visits)
-        console.log("visitr removal failed",visits)
 
-        // document.querySelector(".gallery").innerHTML = ""
-
-        await  console.log('gallery").innerHTML 416 visits :', visits)
-        // await genererVisits(visits)
     });
 
 
@@ -289,11 +274,8 @@ function addErrorFieldForm (field, input, id){
     erreur.id = id
     erreur.innerHTML = "Veuillez ajouter l'element : " + input
       field.appendChild(erreur)
-    // insertAfter(field, erreur)
-    // field.insertAdjacentElement('afterbegin', erreur)
 }
 function genererForm(){
-    // console.log("generer form active")
     const form = document.createElement("form"); //bouton upload img
     form.id = "uploadPhotoCategory"
     const container =document.querySelector(".imgs")
@@ -338,7 +320,6 @@ function genererForm(){
     valider.disabled = true
     valider.classList.add('disabled')
     valider.value = "Valider"
-    console.log('l311 button valider test', valider)
     containerButton.appendChild(valider)
     form.appendChild(containerButton)
     ajoutListenerUpload()
@@ -384,9 +365,7 @@ function ajoutListenerUpload() {
 
     // ajouter le id
     let cofirmerUploadForm = document.getElementById("cofirmerUploadForm")
-    // console.log(cofirmerUploadForm)
     cofirmerUploadForm.addEventListener("click", async function (event) {
-        console.log('event listener was triggered')
 
         event.preventDefault();
 
@@ -412,48 +391,22 @@ function ajoutListenerUpload() {
             body: visitData
 
         });
-        console.log(reponse)
-        //
+        
 
-        //  console.log("reponse.status =", reponse);
-        // let user = await reponse.clone();
-        //  console.log(reponse.status)
 
         switch (reponse.status) {
             case 201:
                 // Récupération des visit depuis l'API
-                visits = await recupFichierVisitsApi(reponse, visits)
-
-                console.log("200")
+                visits = await recupFichierVisitsApi()
                 //this part is responsible for updating gallery n modale gallery pics
                 document.getElementById("gallery").innerHTML = ""
-
-                //window.localStorage.setItem("visits", JSON.stringify(visits));
-                // visits =   window.localStorage.getItem('visits')
-                // visits = JSON.parse(visits);
                 afficherModale() //modale mise a jour
-                // document.querySelector(".imgs").innerHTML = ""
                 document.querySelector(".editor_modale").remove()
 
                 genererVisits(visits);
-                const test = document.querySelector(".three a")
-                console.log(test)
-                // ajoutDomEditor() can't use bc it's removed?
-                // ajoutDomEditor()
                 break;
-            case 400:
-                // ajoutDomErorPw();
-                break;
-            case 401:
-                // ajoutDomErorPw();
-                break;
-            case 404://doesn't exist
-                // ajoutDomErorMail();
-                break;
-            default: //500
-                console.log(`An error occured during upload form submission or not...`);
+           
         }
-        console.log('event listener ended')
     });
 
 }
@@ -466,9 +419,7 @@ async function categoriesForm(cInput){ //function used for debug wrong it's used
             accept: 'application/json'
            },
     });
-    // const valeurReponse = JSON.stringify(reponse);
-    categories = await reponse.json();
-    console.log(categories)
+    let categories = await reponse.json();
     addCategoriesForm(cInput, categories)
 }
 
@@ -501,8 +452,7 @@ function showPreviewUploadedPhoto(){
     document.getElementById('myPhoto').onchange = function () {
         uploadFieldSelector.innerHTML = ""
         uploadFieldSelector.appendChild(img)
-        const src = URL.createObjectURL(this.files[0])
-        img.src = src
+        img.src = URL.createObjectURL(this.files[0])
     }
 }
 
@@ -523,7 +473,6 @@ function ajouterModaleBtnRetour(){
 
 let counter = 0
 let whichInput = ""
-// let previousBool = true
 
     function checkIfInputEmpty(){ //check If Input Empty in all input fields
 
@@ -539,13 +488,11 @@ let whichInput = ""
             // Add Event for each field.
             field.addEventListener("input", function(e) {
                 let test = document.getElementById(index.toString())
-                let isValid = false
+                let isValid
 
                 if (!e.target.value) {
-                    console.log("first if of input check reached (invalid)")
                     buttonInvalid()
                     whichInput = field.name
-                    showErrorEmpty(field)
                     test.classList.add("not-valid")
                     field.classList.remove("valid")
 
@@ -557,14 +504,11 @@ let whichInput = ""
                     test.classList.remove("not-valid")
                     field.classList.add("valid")
 
-                    // console.log("compteNbFieldOk(counter, nbInputFields, isValid) :", counter, nbInputFields, isValid)
                     compteNbFieldOk( nbInputFields, isValid)
                     compteNbClassValid(nbInputFields)
 
                 }
-                // let counter = document.querySelector(".not-valid")
 
-                 // console.log("compteur 561 compteNbFieldOk counter :", counter)
                 return counter
 
             })
@@ -579,7 +523,6 @@ function compteNbFieldOk( nbInputFields, isValid ) {
         if (previousState(isValid, previousBool)){
             previousBool = false
             counter += 1
-            console.log("entered compteNbFieldOk counter shoul +1 counter: ", counter)
         }
 
 
@@ -588,7 +531,6 @@ function compteNbFieldOk( nbInputFields, isValid ) {
         counter -= 1
         previousBool = true
     }
-    // console.log("compteur 581 compteNbFieldOk counter :", counter)
 
     if (counter === nbInputFields) {
         buttonValid()
@@ -601,7 +543,6 @@ function compteNbFieldOk( nbInputFields, isValid ) {
 
 function previousState(s1, s2) {
     //this function check if previous state is different
-    // console.log("s1,s2 :",s1,s2)
     return s1 === s2
 }
 function buttonInvalid() {
@@ -621,7 +562,6 @@ function buttonValid() {
 function compteNbClassValid(nbInputFields) {
     let validClasses= document.getElementsByClassName("valid")
     let nbClassValid = Array.from(validClasses).length
-    console.log("NbClassValid nbInputFields : ", nbClassValid, nbInputFields)
     if (nbInputFields === nbClassValid) {
         let mybutton = document.getElementById('cofirmerUploadForm')
         mybutton.disabled = false;
