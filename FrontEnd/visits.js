@@ -62,12 +62,6 @@ sectionFiches.appendChild(visitShowAll).addEventListener("click", function () {
 });
 
 
-// on cree des clefs unique pour les categories
-//2 sets are created with cat id&names
-let categories = visits.map(visit => visit.category.id);
-// console.log(categories)
-let uniqueCategories = new Set(categories);
-// console.log(uniqueCategories)
 
 let categories_name = visits.map(visit => visit.category.name);
 let uniqueCategories_name = new Set(categories_name);
