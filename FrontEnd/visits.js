@@ -1,12 +1,11 @@
 
-// Récupération des visites depuis le fichier JSON variables are created on global scope CANNOT BE DELETED
-let reponse = await fetch('http://localhost:5678/api/works'); // on attend la repose de l'api des traveaux
-let visits = await reponse.json()                                   // on attend la repose de l'api du json
+// Récupération des visites depuis l'api
 
+let visits = await recupFichierVisitsApi()
 
 
 async function recupFichierVisitsApi() {
-    //function used to refresh data during upload CANNOT BE DELETED
+    //function used to refresh data during upload
     // Récupération des visites depuis l'api
     let reponse = await fetch('http://localhost:5678/api/works');
     return  await reponse.json()
