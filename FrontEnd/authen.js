@@ -57,7 +57,6 @@ function ajoutDomErorMail(){
     msg.classList.add('erreur_login')
     msg.innerText = "Email ou mot de passe incorrect";
     passwordError.insertAdjacentElement("afterEnd", msg)
-
 }
 
 function rm_tag(){

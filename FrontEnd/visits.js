@@ -60,7 +60,7 @@ sectionFiches.appendChild(visitShowAll).addEventListener("click", function () {
 });
 
 
-
+//on va chercher les categories dans l'api
 let categoriesResponse = await fetch("http://localhost:5678/api/categories", {
     method: "GET",
     headers: {
